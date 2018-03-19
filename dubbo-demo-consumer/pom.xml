@@ -11,6 +11,10 @@
 
     <artifactId>dubbo-demo-consumer</artifactId>
 
+    <properties>
+        <com.github.sgroschupf.zkclient.version>0.1</com.github.sgroschupf.zkclient.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.chenxyz.dubbo</groupId>
@@ -21,6 +25,17 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chenxyz.dubbo.demo.dao.UserDao">
+    <sql id="BaseColumnPropertyList">
+        <!-- 基础字段属性集合 -->
+        #{id},
+        #{name},
+        #{age}
+    </sql>
+
+    <sql id="BaseColumnList">
+        <!-- 基础字段集合 -->
+        ID,
+        NAME,
+        AGE
+    </sql>
+
+    <insert id="add" parameterType="com.chenxyz.dubbo.demo.model.User">
+        <selectKey keyColumn="id" keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(), '-', '')
+        </selectKey>
+        <!-- 插入 -->
+        INSERT INTO tb_user
+        (
+        <include refid="BaseColumnList"/>
+        )
+        VALUE
+        (
+        <include refid="BaseColumnPropertyList"/>
+        )
+    </insert>
+
+</mapper>

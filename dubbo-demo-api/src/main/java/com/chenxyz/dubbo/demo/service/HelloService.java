@@ -1,4 +1,6 @@
-package com.chenxyz.dubbo.demo;
+package com.chenxyz.dubbo.demo.service;
+
+import com.chenxyz.dubbo.demo.model.User;
 
 /**
  * Description
@@ -10,4 +12,6 @@ package com.chenxyz.dubbo.demo;
 public interface HelloService {
 
     String sayHello(String name);
+
+    int addUser(User user);
 }

@@ -8,6 +8,13 @@
     <artifactId>dubbo-demo</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.3.RELEASE</version>
+    </parent>
+
     <modules>
         <module>dubbo-demo-api</module>
         <module>dubbo-demo-consumer</module>
@@ -16,6 +23,7 @@
 
     <properties>
         <dubbo.version>2.6.0</dubbo.version>
+        <com.github.sgroschupf.zkclient.version>0.1</com.github.sgroschupf.zkclient.version>
     </properties>
 
     <dependencyManagement>
@@ -24,6 +32,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.sgroschupf</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${com.github.sgroschupf.zkclient.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
