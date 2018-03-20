@@ -23,7 +23,8 @@
 
     <properties>
         <dubbo.version>2.6.0</dubbo.version>
-        <com.github.sgroschupf.zkclient.version>0.1</com.github.sgroschupf.zkclient.version>
+        <zookeeper.version>3.4.10</zookeeper.version>
+        <zookeeper.client.version>0.10</zookeeper.client.version>
     </properties>
 
     <dependencyManagement>
@@ -35,9 +36,15 @@
             </dependency>
 
             <dependency>
-                <groupId>com.github.sgroschupf</groupId>
+                <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
-                <version>${com.github.sgroschupf.zkclient.version}</version>
+                <version>${zookeeper.client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
